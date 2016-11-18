@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+<h1>PSYCHIC GAME</h1>
+
+<h2> Guess a letter...</h2>
+
+<h3 id = "wins"> Wins :</h3>
+<h3 id = "losses">Losses:</h3>
+
+
+<h3 id = "guessesLeft"># of Guesses left:</h3>
+
+<h3 id = "alreadyGuessed">Already Guessed These:</h3>
+
+<script type="text/javascript">
+	
+// Guess what letter I'm thinking of
+
+// Wins: (# of times the user has guessed the letter correctly)
+
+// Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
+
+// Guesses Left: (# of guesses left. This will update)
+
+// Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.)
+
+// pseudo code: 
+// first, computer must pick a random letter a-z/1-26
+// user must guess computer's chosen letter
+// guess is displayed on html page
+// set number of allowed guesses 
+// game increases number of guesses until user wins/loses
+// if user guesses correctly, wins increases by 1 
+// if user guesses incorrectly, loses increases by 1
+// reload game without refresh 
+
+
+
+
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+var alphLength = alphabet.length
+
+var compChoice = alphabet[Math.floor(Math.random() * alphLength)];
+
+var win = document.getElementById("win").innerHTML = "Wins: ", + 0;
+var losses = document.getElementById("losses").innerHTML = "Losses: ", + 0;
+
+var userGuess = ""; 
+var livesLeft 
+
+
+
+alert("Hey! I'm the Akinator's long lost twice removed distant adopted nephew. Let's play!");
+
+
+ for (var i = 0; i < alphLength; i++) {	
+	console.log(compChoice);
+}
+
+
+
+</script>
+
+</body>
+</html>
