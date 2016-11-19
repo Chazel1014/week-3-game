@@ -52,7 +52,7 @@ var compChoice = alphabet[Math.floor(Math.random() * alphLength)];
 //displays win/loss on html 
 var wins = "";
 var losses = "";
-var lettersGuessed = "";
+var alreadyGuessed = "";
 
 // document.querySelector("#wins").innerHTML = ;
 // document.querySelector("#losses").innerHTML = wins;
@@ -88,7 +88,7 @@ document.onkeyup = function(event) {
 		compChoice = alphabet[Math.floor(Math.random() * alphLength)];
 		
 		//displays lives left 
-		document.querySelector(".livesLeft").innerHTML = livesLeft;
+		document.querySelector(".numLeft").innerHTML = livesLeft;
 	
 		//if user guesses wrong letter	
 	} else if (userGuess != compChoice){
@@ -97,6 +97,7 @@ document.onkeyup = function(event) {
 		document.querySelector(".losses").innerHTML = losses;
 		//add user guess to array 
 		userArray.push(userGuess);
+		document.querySelector(".lettersGuessed").innerHTML = userArray;
 		
 		//resets game - if lives left hits 0 
 		
@@ -108,7 +109,6 @@ document.onkeyup = function(event) {
 			//computer picks new letter
 			compChoice = alphabet[Math.floor(Math.random() * alphLength)];
 		} 
-// document.querySelector(".alreadyGuessed").innerHTML = alreadyGuessed;
 
 	} 
 		console.log(compChoice);	
