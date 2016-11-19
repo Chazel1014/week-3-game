@@ -31,7 +31,12 @@ alert("Hey! I'm the Akinator's long lost twice removed distant adopted nephew. L
 document.onkeyup = function(event) {
 var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 //displays user's guesses
-  document.querySelector(".numLeft").innerHTML = livesLeft;
+  
+//displays lives counter 
+document.querySelector(".numLeft").innerHTML = livesLeft;
+
+//displays users guess
+document.querySelector(".lettersGuessed").innerHTML = userGuess;
   
   //how user wins, loses, and game ends 
   //user has ten tries to guess computer's choice correctly
@@ -49,11 +54,7 @@ var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
   		document.querySelector(".wins").innerHTML = wins;
   		// computer picks a new letter
   		compChoice = alphabet[Math.floor(Math.random() * alphLength)];
- 		//if user guesses wrong letter
  		
- 		//displays lives left 
- 		document.querySelector(".livesLeft").innerHTML = livesLeft;
-  	
  		//if user guesses wrong letter	
   	} else if (userGuess != compChoice){
   		//minus 1 life
