@@ -31,7 +31,7 @@ alert("Hey! I'm the Akinator's long lost twice removed distant adopted nephew. L
 document.onkeyup = function(event) {
 var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 //displays user's guesses
- 	
+  document.querySelector(".numLeft").innerHTML = livesLeft;
   
   //how user wins, loses, and game ends 
   //user has ten tries to guess computer's choice correctly

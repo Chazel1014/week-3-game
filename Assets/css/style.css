@@ -2,9 +2,12 @@
 	background-color: rgb (60,50,75);
 	color: rgb(73,213,224);
 	font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif
-
 }	
 
 body {
 	background-image: url("galaxy-wallpaper-36.jpg");
+}
+
+span {
+	color: white;
 }
