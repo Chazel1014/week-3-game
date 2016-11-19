@@ -1,7 +1,10 @@
 * {
-	background-color: rgb(60,50,75);
-	color: #777777;
-	font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif; 
-	/*font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif; 
-	text-decoration: none;*/
+	background-color: rgb (60,50,75);
+	color: rgb(73,213,224);
+	font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif
+
+}	
+
+body {
+	background-image: url("galaxy-wallpaper-36.jpg");
 }
