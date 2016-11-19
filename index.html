@@ -11,16 +11,6 @@
 
 <h2> Guess what letter I'm thinking of...</h2>
 
-<!-- <h3 id = "wins">Wins: </h3> -->
-
-<h3 class = "numWins"> Wins: <span class='wins'></span></h3>
-
-<h3 class = "numLosses"> Losses: <span class='losses'></span></h3>
-
-<h3 class = "guessesLeft"> Guesses left: <span class='livesLeft'></span></h3>
-
-<h3 class = "alreadyGuessed">Your Guesses So Far: <span class='alreadyGuessed'></span></h3>
-
 <!-- // Guess what letter I'm thinking of
 
 // Wins: (# of times the user has guessed the letter correctly)
@@ -41,6 +31,14 @@
 // if user guesses incorrectly, loses increases by 1
 // reload game without refresh  -->
 
+<h3 class = "numWins"> Wins: <span class='wins'></span></h3>
+
+<h3 class = "numLosses"> Losses: <span class='losses'></span></h3>
+
+<h3 class = "numLeft"> Guesses left: <span class='livesLeft'></span></h3>
+
+<h3 class = "lettersGuessed">Your Guesses So Far: <span class='alreadyGuessed'></span></h3>
+
 <script type="text/javascript">
 
 //define possible choices 
@@ -53,7 +51,8 @@ var compChoice = alphabet[Math.floor(Math.random() * alphLength)];
 
 //displays win/loss on html 
 var wins = "";
-var numLosses = "";
+var losses = "";
+var lettersGuessed = "";
 
 // document.querySelector("#wins").innerHTML = ;
 // document.querySelector("#losses").innerHTML = wins;
@@ -61,12 +60,15 @@ var numLosses = "";
 //user choices unknown, has to push to an empty array
 var userArray = [];
 
+
 //limit games to play 
 var livesLeft = 10;  
 
 //when user clicks a letter, it collects in console. 
 document.onkeyup = function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	//displays user's guesses
+	
 
 //how user wins, loses, and game ends 
 //user has ten tries to guess computer's choice correctly
@@ -84,15 +86,18 @@ document.onkeyup = function(event) {
 		document.querySelector(".wins").innerHTML = wins;
 		// computer picks a new letter
 		compChoice = alphabet[Math.floor(Math.random() * alphLength)];
-		//if user guesses wrong letter
+		
+		//displays lives left 
+		document.querySelector(".livesLeft").innerHTML = livesLeft;
 	
+		//if user guesses wrong letter	
 	} else if (userGuess != compChoice){
 		//minus 1 life
 		livesLeft--;
-		//add user guess to screen 
-		userArray.push(userGuess);
-		//display losses
 		document.querySelector(".losses").innerHTML = losses;
+		//add user guess to array 
+		userArray.push(userGuess);
+		
 		//resets game - if lives left hits 0 
 		
 		if (livesLeft === 0){
@@ -103,6 +108,8 @@ document.onkeyup = function(event) {
 			//computer picks new letter
 			compChoice = alphabet[Math.floor(Math.random() * alphLength)];
 		} 
+// document.querySelector(".alreadyGuessed").innerHTML = alreadyGuessed;
+
 	} 
 		console.log(compChoice);	
 		console.log(userGuess);
